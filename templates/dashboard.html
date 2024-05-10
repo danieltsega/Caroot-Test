@@ -1,0 +1,116 @@
+<!-- dashboard.html -->
+{% extends 'base.html' %} {% block content %}
+<div
+  class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-8"
+>
+  <!-- Total Registered Laptops -->
+  <div class="bg-white p-4 rounded-lg shadow">
+    <div class="flex items-center">
+      <svg
+        class="w-6 h-6 text-blue-500 mr-2"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+        ></path>
+      </svg>
+      <span class="text-lg font-semibold">Total Registered Laptops</span>
+    </div>
+    <p class="text-gray-600 mt-2">{{ total_registered_laptops }}</p>
+  </div>
+
+  <!-- Total Stolen Laptops (Placeholder) -->
+  <div class="bg-white p-4 rounded-lg shadow">
+    <div class="flex items-center">
+      <svg
+        class="w-6 h-6 text-red-500 mr-2"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+        ></path>
+      </svg>
+      <span class="text-lg font-semibold">Total Stolen Laptops</span>
+    </div>
+    <p class="text-gray-600 mt-2">42</p>
+  </div>
+
+  <!-- Total Student Laptops -->
+  <div class="bg-white p-4 rounded-lg shadow">
+    <div class="flex items-center">
+      <svg
+        class="w-6 h-6 text-green-500 mr-2"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+        ></path>
+      </svg>
+      <span class="text-lg font-semibold">Total Student Laptops</span>
+    </div>
+    <p class="text-gray-600 mt-2">{{ total_student_laptops }}</p>
+  </div>
+
+  <!-- Total Staff Laptops -->
+  <div class="bg-white p-4 rounded-lg shadow">
+    <div class="flex items-center">
+      <svg
+        class="w-6 h-6 text-yellow-500 mr-2"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+        ></path>
+      </svg>
+      <span class="text-lg font-semibold">Total Staff Laptops</span>
+    </div>
+    <p class="text-gray-600 mt-2">{{ total_staff_laptops }}</p>
+  </div>
+
+  <!-- Total Guest Laptops -->
+  <div class="bg-white p-4 rounded-lg shadow">
+    <div class="flex items-center">
+      <svg
+        class="w-6 h-6 text-purple-500 mr-2"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+        ></path>
+      </svg>
+      <span class="text-lg font-semibold">Total Guest Laptops</span>
+    </div>
+    <p class="text-gray-600 mt-2">{{ total_guest_laptops }}</p>
+  </div>
+</div>
+{% endblock %}

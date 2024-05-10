@@ -1,0 +1,27 @@
+<!-- registration_success.html -->
+{% extends 'base.html' %} {% block content %}
+<div class="container mx-auto p-4">
+  <h1 class="text-2xl font-bold mb-4">Registration Successful!</h1>
+  <div class="bg-white shadow overflow-hidden rounded-lg p-6 mb-4">
+    <img
+      src="{{ barcode_url }}"
+      alt="Laptop Barcode"
+      class="mx-auto w-60 h-60"
+    />
+    <div class="flex justify-center mt-4">
+      <a
+        href="{{ barcode_url }}"
+        download="laptop_barcode.png"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+        >Download Barcode</a
+      >
+      <button
+        onclick="window.print()"
+        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Print Barcode
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

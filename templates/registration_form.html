@@ -1,0 +1,94 @@
+<!-- registration_form.html -->
+
+{% extends 'base.html' %} {% block content %}
+<div class="container mx-auto">
+  <div
+    class="max-w-lg mx-auto bg-gray-600 rounded-lg shadow-md overflow-hidden"
+  >
+    <h2 class="text-2xl font-bold mb-4 text-center text-white">
+      Register Laptop
+    </h2>
+    <form
+      method="post"
+      enctype="multipart/form-data"
+      class="grid grid-cols-2 gap-x-4 p-6"
+    >
+      {% csrf_token %}
+
+      <!-- Laptop details -->
+      <div class="col-span-2 sm:col-span-1 mb-4">
+        <label
+          for="id_laptop_name"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Laptop Name</label
+        >
+        {{ form.laptop_name }}
+      </div>
+      <div class="col-span-2 sm:col-span-1 mb-4">
+        <label
+          for="id_model"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Model</label
+        >
+        {{ form.model }}
+      </div>
+      <div class="col-span-2 sm:col-span-1 mb-4">
+        <label
+          for="id_serial_number"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Serial Number</label
+        >
+        {{ form.serial_number }}
+      </div>
+      <div class="col-span-2 sm:col-span-1 mb-4">
+        <label
+          for="id_color"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Color</label
+        >
+        {{ form.color }}
+      </div>
+
+      <!-- Optional fields: Student, Staff, and Guest -->
+      {% if form.student %}
+      <div class="col-span-2 mb-4">
+        <label
+          for="id_student"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Student</label
+        >
+        {{ form.student }}
+      </div>
+      {% endif %} {% if form.staff %}
+      <div class="col-span-2 mb-4">
+        <label
+          for="id_staff"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Staff</label
+        >
+        {{ form.staff }}
+      </div>
+      {% endif %} {% if form.guest %}
+      <div class="col-span-2 mb-4">
+        <label
+          for="id_guest"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Guest</label
+        >
+        {{ form.guest }}
+      </div>
+      {% endif %}
+
+      <!-- Submit button -->
+      <div class="col-span-2">
+        <button
+          type="submit"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
