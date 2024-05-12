@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .errorlist {
+        display: flex;
+        width: 100%;
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 8px;
+        color: red;
+      }
+      .login-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-image: url("{%static 'images/login-bg.jpg' %}"); /* Replace with your chosen image URL */
+        background-size: cover;
+        background-position: center;
+      }
+      .login-form {
+        padding: 2rem;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 0; /* Removes rounded corners */
+        width: 100%;
+        max-width: 400px; /* Adjust as needed */
+      }
+      .login-button {
+        width: 100%; /* Makes the button wider */
+        border-radius: 0; /* Removes rounded corners */
+      }
+    </style>
+  </head>
+  <body class="login-container">
+    <div class="login-form flex flex-col items-center w-full">
+      <img
+        src="{%static 'images/logo2.png' %}"
+        alt="Logo"
+        class="mb-4 w-24 h-24"
+      />
+      <!-- Replace with your chosen logo URL -->
+      <span class="flex justify-center mb-4 font-bold text-xl">LOGIN</span>
+      <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %} {{form.as_p}}
+        <div class="flex justify-center items-center p-4">
+          <input
+            type="submit"
+            value="Login"
+            class="login-button bg-green-700 hover:bg-green-800 py-2 text-lg font-bold text-white"
+          />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

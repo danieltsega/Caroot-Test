@@ -8,8 +8,9 @@ from .models import Laptop
 import qrcode
 from io import BytesIO
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
-
+@login_required
 def register_laptop(request):
     if request.method == 'POST':
         form = LaptopRegistrationForm(request.POST)
@@ -64,6 +65,7 @@ def register_laptop(request):
         form = LaptopRegistrationForm()
     return render(request, 'registration_form.html', {'form': form})
 
+@login_required
 def registration_success(request, laptop_id):
     laptop = Laptop.objects.get(pk=laptop_id)
     barcode_url = laptop.barcode.url  # Assuming 'barcode' is an ImageField in your Laptop model
@@ -74,6 +76,7 @@ def registration_success(request, laptop_id):
     return render(request, 'registration_success.html', context)
 
 
+@login_required
 def dashboard_view(request):
     # Fetch counts for different types of laptops
     total_registered_laptops = Laptop.objects.all().count()
